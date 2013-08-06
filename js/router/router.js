@@ -29,6 +29,7 @@ define([
 		},
 
 		openGallery: function(id) {
+			var galleryCollectionInstance = new galleryCollection( { id : id } );
 			var galleryViewInstance = new galleryView({
 				id : id
 			});
