@@ -12,7 +12,15 @@ define([
 
 	var galleryCollection = Backbone.Collection.extend({
 
-		url :  
+		initialize: function() {
+			this.fetch();
+		},
+
+		url : 'getImages.php?gid='+this.options.id,
+
+
+
+
 
 	});
 
