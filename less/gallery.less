@@ -1,0 +1,41 @@
+@import 'mainpage.less';
+
+#galleryImages {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	ul {
+		list-style-type: none;
+		padding: 0;
+		li {
+			display: none;
+			img {
+				position: relative; 
+				top: 0;
+				left: 0;
+			}
+			&.visible {
+				display: block;
+			}
+		}
+	}
+}
+
+.hovers_general() {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	width: 385px;
+	height: 434px;
+}
+#leftHover {
+	.hovers_general;
+	left: 0;
+	cursor: url('../img/prev.png'), pointer;
+}
+#rightHover {
+	.hovers_general;
+	left: 385px;
+	cursor: url('../img/next.png'), pointer;
+}

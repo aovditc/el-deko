@@ -2,12 +2,14 @@ define([
 	'app',
 	'Underscore',
 	'jQuery',
-	'Backbone'
+	'Backbone',
+	'galleryULview'
 ], function(
 	app,
 	_,
 	$,
-	Backbone
+	Backbone,
+	galleryULview
 	) {
 
 	var galleryView = Backbone.View.extend({
@@ -27,7 +29,13 @@ define([
 		},
 
 		renderTemplate: function() {
-			$('.container').append( this.template() );
+			$('.container').append( this.$el );
+			this.$el.append( this.template() );
+		},
+
+		events: {
+			'click #leftHover'   : 'goPrevious',
+			'click #rightHover'  : 'goNext'
 		},
 
 		registerDOMElements: function() {
@@ -36,7 +44,7 @@ define([
 				'rightCover'	   : $('#rightCover'),
 				'leftHover'        : $('#leftHover'),
 				'rightHover'	   : $('#rightHover'),
-				'galleryImages'    : $('galleryImages')
+				'galleryImages'    : $('#galleryImages')
 			}
 		},
 
@@ -60,7 +68,26 @@ define([
 		},
 
 		showGallery: function(id) {
-			
+			this.collection.fakeFetch();
+			galleryULviewInstance = new galleryULview({ collection: this.collection });
+			this.dom.galleryImages.html( galleryULviewInstance.render().$el );
+
+			this.dom.galleryImages.find('li:first').addClass('visible');
+			$('.box, .butbelow').remove();
+		},
+
+		goPrevious: function() {
+			var currentImg = this.dom.galleryImages.find('li.visible');
+			currentImg.removeClass('visible');	
+			var prevImg = currentImg.prev();
+			prevImg.length ? prevImg.addClass('visible') : this.dom.galleryImages.find('li:last-child').addClass('visible');
+		},
+
+		goNext: function() {
+			var currentImg = this.dom.galleryImages.find('li.visible');
+			currentImg.removeClass('visible');	
+			var nextImg = currentImg.next();
+			nextImg.length ? nextImg.addClass('visible') : this.dom.galleryImages.find('li:first-child').addClass('visible');
 		}
 
 	});

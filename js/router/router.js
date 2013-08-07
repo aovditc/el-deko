@@ -4,14 +4,16 @@ define([
 	'Backbone',
 	'homePageView',
 	'homePageModel',
-	'galleryView'
+	'galleryView',
+	'galleryCollection'
 ], function(
 	app,
 	Underscore,
 	Backbone,
 	homePageView,
 	homePageModel,
-	galleryView
+	galleryView,
+	galleryCollection
 	) {
 
 	var Router = Backbone.Router.extend({
@@ -22,6 +24,7 @@ define([
 		},
 
 		openHomePage: function() {
+			$('.container').html('');
 			var homePageModelInstance = new homePageModel;
 			var homePageViewInstance = new homePageView({
 				model : homePageModelInstance

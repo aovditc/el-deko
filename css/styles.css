@@ -87,3 +87,42 @@ body {
   border-left: solid 1px #ffffff;
   background: #210f0f;
 }
+#galleryImages {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#galleryImages ul {
+  list-style-type: none;
+  padding: 0;
+}
+#galleryImages ul li {
+  display: none;
+}
+#galleryImages ul li img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#galleryImages ul li.visible {
+  display: block;
+}
+#leftHover {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  width: 385px;
+  height: 434px;
+  left: 0;
+  cursor: url('../img/prev.png'), pointer;
+}
+#rightHover {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  width: 385px;
+  height: 434px;
+  left: 385px;
+  cursor: url('../img/next.png'), pointer;
+}

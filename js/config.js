@@ -11,7 +11,10 @@ requirejs.config({
 		homePageView : 'views/homePageView',
 		homePageModel : 'models/homePageModel',
 		blockElementView : 'views/blockElementView',
-		galleryView : 'views/galleryView'
+		galleryView : 'views/galleryView',
+		galleryCollection : 'collections/galleryCollection',
+		galleryULview : 'views/galleryUL',
+		galleryLIview : 'views/galleryLI'
 	},
 	shim : {
 	    jQuery : {
