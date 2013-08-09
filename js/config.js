@@ -32,6 +32,7 @@ requirejs.config({
 	    	exports : 'Modernizr'
 	    },
 	    jstween : {
+	    	deps: ['jQuery'],
 	    	exports : 'jstween'
 	    }
 	  }

@@ -32,18 +32,18 @@ define([
 		mouseOutHoverbox: function() {
 			this.$el.find(' .videobox').fadeOut('500', 'linear');
 			this.$el.find(' .hoverbox').css('opacity', '0.5');
-			this.$el.find(' .hoverbox').tween({ 'opacity' : {
-				 	start: 0,
-					stop: 50,
+			this.$el.find(' .hoverbox').tween({ opacity : {
+				 	start: 50,
+					stop: 100,
 					time: 0,
-					duration: 1,
-					effect:'easeInOut'
+					duration: 0.5
 				}
-			});	
+			}).play();	
 		},
 
 		mouseOverHoverbox: function() {
 			this.$el.find(' .videobox').fadeIn('1000', 'linear');
+			this.$el.find(' .videobox').stop();
 		},
 
 		template: function() {

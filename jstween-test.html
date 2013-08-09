@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script type="text/javascript" src="js/libs/jquery-min.js"></script>
+		<script type="text/javascript" src="js/libs/jstween-min.js"></script>
+		<style>
+			body {
+				background: #ffffff;
+			}
+			.box {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				background: #cccccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+			    $('.box').tween({
+				   left:{
+				      start: 0,
+				      stop: 300,
+				      time: 0,
+				      units: 'px',
+				      duration: 1,
+				      effect:'easeInOut'
+				   },
+				   top:{
+				      start: 0,
+				      stop: 200,
+				      time: 0,
+				      units: 'px',
+				      duration: 1,
+				      effect:'easeInOut'
+				   }
+				}).play();
+			});
+		</script>	
+	</body>
+</html>
