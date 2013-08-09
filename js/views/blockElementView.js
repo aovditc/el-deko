@@ -2,12 +2,14 @@ define([
 	'app',
 	'Underscore',
 	'jQuery',
-	'Backbone'
+	'Backbone',
+	'jstween'
 ], function(
 	app,
 	_,
 	$,
-	Backbone
+	Backbone,
+	jstween
 	) {
 
 
@@ -30,7 +32,14 @@ define([
 		mouseOutHoverbox: function() {
 			this.$el.find(' .videobox').fadeOut('500', 'linear');
 			this.$el.find(' .hoverbox').css('opacity', '0.5');
-			this.$el.find(' .hoverbox').animate({ 'opacity' : '1' }, {'duration': 300, 'easing': 'linear'});	
+			this.$el.find(' .hoverbox').tween({ 'opacity' : {
+				 	start: 0,
+					stop: 50,
+					time: 0,
+					duration: 1,
+					effect:'easeInOut'
+				}
+			});	
 		},
 
 		mouseOverHoverbox: function() {

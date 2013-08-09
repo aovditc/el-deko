@@ -6,6 +6,7 @@ requirejs.config({
 		Backbone: 'libs/backbone-min',
 		text: 'libs/text-min',
 		Modernizr: 'libs/modernizr.custom',
+		jstween: 'libs/jstween-min',
 		app: 'app',
 		Router : 'router/router',
 		homePageView : 'views/homePageView',
@@ -29,6 +30,9 @@ requirejs.config({
 	    },
 	    Modernizr : {
 	    	exports : 'Modernizr'
+	    },
+	    jstween : {
+	    	exports : 'jstween'
 	    }
 	  }
 	});
